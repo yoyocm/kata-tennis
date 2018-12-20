@@ -1,6 +1,11 @@
 # kata-tennis
 http://codingdojo.org/kata/Tennis/
 
+### How to run a tennis match simulation
+```console
+user@laptop:~$ python main.py
+```
+
 
 ### To-do list
 
