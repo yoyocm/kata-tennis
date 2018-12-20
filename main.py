@@ -1,9 +1,12 @@
 from src.game import Game
+from src.player import Player
 
 from random import randint
 
 if __name__ == '__main__':
-    game = Game()
+    first_player = Player("First", "Player")
+    second_player = Player("Second", "Player")
+    game = Game(first_player, second_player)
     game_status = 0
 
     while game_status == 0:
