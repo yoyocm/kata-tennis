@@ -2,10 +2,13 @@ from src.game import Game
 from src.player import Player
 
 from random import randint
+from faker import Faker
+
+fake = Faker()
 
 if __name__ == '__main__':
-    first_player = Player("First", "Player")
-    second_player = Player("Second", "Player")
+    first_player = Player(fake.first_name(), fake.last_name())
+    second_player = Player(fake.first_name(), fake.last_name())
     game = Game(first_player, second_player)
     game_status = 0
 

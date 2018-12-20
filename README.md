@@ -12,7 +12,8 @@ user@laptop:~$ python main.py
 - [x] Create Game object
 - [x] Create Player object
 - [x] Create Score object
-- [ ] Use faker module to generate fake first and last names
+- [x] Use faker module to generate fake first and last names
+- [ ] Define an entity as opponent on a match and player will inherit from this entity (to handle doubles tennis matches)
 - [ ] Use Factory design pattern to generate players
 - [ ] Implement tests for Game object
 - [ ] Implement tests for Score object
