@@ -1,3 +1,5 @@
+[![Inline docs](https://travis-ci.com/yoyocm/kata-tennis.svg?branch=master)](https://travis-ci.com/yoyocm/kata-tennis.svg?branch=master)
+
 # kata-tennis
 http://codingdojo.org/kata/Tennis/
 
