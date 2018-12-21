@@ -26,6 +26,5 @@ user@laptop:~$ ./run_tests.sh
 - [x] Implement tests for Score object
 - [x] Implement tests for Player object
 - [x] Run CI on commits
-- [ ] Generate requirements.txt file
-- [ ] Add attributes in Player object
 - [x] Handle deuce situation
+- [x] Generate requirements.txt file
