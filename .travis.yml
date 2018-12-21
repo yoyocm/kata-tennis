@@ -6,4 +6,4 @@ python:
 - "3.6"
 
 # Unit tests to run
-script: python ./test/game.py --test
+script: ./run_tests.sh

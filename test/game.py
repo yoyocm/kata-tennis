@@ -1,12 +1,12 @@
 import unittest
+import os
+import sys
 
-class TestPackages(unittest.TestCase):
-    def setUp(self):
-        """Before unittest"""
-        pwd = os.path.dirname(__file__)
-        filename = "%s/%s" % (pwd, "packages.cache")
-        self.__allpackages = loadPkgInfo(filename, False, True)
 
+class GameTest(unittest.TestCase):
     def test_summary(self):
         """ test summary properties"""
         self.assertEqual(True, True)
+
+if __name__ == '__main__':
+    unittest.main()
