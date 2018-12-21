@@ -24,3 +24,6 @@ class Score:
 
     def __str__(self):
         return self.POSSIBLE_SCORES[self.score]
+
+    def __eq__(self, other):
+        return self.score == other.score

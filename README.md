@@ -28,4 +28,4 @@ user@laptop:~$ ./run_tests.sh
 - [x] Run CI on commits
 - [ ] Generate requirements.txt file
 - [ ] Add attributes in Player object
-- [ ] Handle deuce situation
+- [x] Handle deuce situation

@@ -63,12 +63,19 @@ class Game:
             len(str(self.second_player))
             )
 
+        if self.first_player_score == self.second_player_score and self.first_player_score.score >= 3:
+            first_player_score = "deuce"
+            second_player_score = "....."
+        else:
+            first_player_score = str(self.first_player_score)
+            second_player_score = str(self.second_player_score)
+
         first_player_line = str(self.first_player)
         first_player_line = self._complete_player_line(first_player_line, max_len_player_name) + \
-            "\t" + str(self.first_player_score)
+            "\t" + first_player_score
 
         second_player_line = str(self.second_player)
         second_player_line = self._complete_player_line(second_player_line, max_len_player_name) + \
-            "\t" + str(self.second_player_score)
+            "\t" + second_player_score
 
         return first_player_line + "\n" + second_player_line
