@@ -10,8 +10,8 @@ class Score:
         self.score = score
 
     def increment_score(self):
-        if self.score >= 4:
-            raise Exception('Score cannot be increment over 4.')
+        if self.score >= 5:
+            raise Exception('Score cannot be increment over 5.')
 
         self.score = self.score + 1
 

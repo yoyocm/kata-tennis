@@ -28,10 +28,9 @@ class ScoreTest(unittest.TestCase):
         score.increment_score()
         score.increment_score()
         score.increment_score()
-        self.assertEqual(score.score, 3)
-
         score.increment_score()
-        self.assertEqual(score.score, 4)
+        score.increment_score()
+        self.assertEqual(score.score, 5)
 
         self.assertRaises(Exception, score.increment_score)
 
