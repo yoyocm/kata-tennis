@@ -1,5 +1,5 @@
 from src.game import Game
-from src.player import Player
+from src.opponent import Opponent
 
 from random import randint
 from faker import Faker
@@ -7,9 +7,9 @@ from faker import Faker
 fake = Faker()
 
 if __name__ == '__main__':
-    first_player = Player(fake.first_name(), fake.last_name())
-    second_player = Player(fake.first_name(), fake.last_name())
-    game = Game(first_player, second_player)
+    first_opponent = Opponent.factory('Doublet')
+    second_opponent = Opponent.factory('Doublet')
+    game = Game(first_opponent, second_opponent)
     game_status = 0
 
     while not game_status:
@@ -20,4 +20,4 @@ if __name__ == '__main__':
 
         game_status = game.evaluate()
         print(game)
-        print("----------------------------------")
+        print("---------------------------------------------")

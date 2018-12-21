@@ -1,5 +1,7 @@
+from src.abstract_opponent import AbstractOpponent
 
-class Player:
+
+class Player(AbstractOpponent):
     """
     Player informations and behaviour is implemented here
     """
