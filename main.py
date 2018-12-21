@@ -12,7 +12,7 @@ if __name__ == '__main__':
     game = Game(first_player, second_player)
     game_status = 0
 
-    while game_status == 0:
+    while not game_status:
         if randint(1, 2) == 1:
             game.first_player_win()
         else:

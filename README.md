@@ -3,9 +3,14 @@
 # kata-tennis
 http://codingdojo.org/kata/Tennis/
 
-### How to run a tennis match simulation
+### How to run a tennis match simulation ?
 ```console
 user@laptop:~$ python main.py
+```
+
+### How to run tests ?
+```console
+user@laptop:~$ ./run_tests.sh
 ```
 
 
@@ -14,10 +19,10 @@ user@laptop:~$ python main.py
 - [x] Create Player object
 - [x] Create Score object
 - [x] Use faker module to generate fake first and last names
-- [ ] Match has to return Player who won or None
+- [x] Match evaluate function has to return Player who won or None
 - [ ] Define an entity as opponent on a match and player will inherit from this entity (to handle doubles tennis matches)
 - [ ] Use Factory design pattern to generate players
-- [ ] Implement tests for Game object
+- [x] Implement tests for Game object
 - [x] Implement tests for Score object
 - [x] Implement tests for Player object
 - [x] Run CI on commits

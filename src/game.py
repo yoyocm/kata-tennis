@@ -30,21 +30,19 @@ class Game:
 
     def evaluate(self):
         """
-        Returns 1 if first won the game,
-        2 if second player won,
-        0 if the game is not completed
+        Returns Player who won or None if the game is not completed
         """
 
         if self.first_player_score.score < 4 and self.second_player_score.score < 4:
-            return 0
+            return None
 
         score_difference = self.first_player_score.score - self.second_player_score.score
         if score_difference >= 2:
-            return 1
+            return self.first_player
         elif score_difference <= -2:
-            return 2
+            return self.second_player
 
-        return 0
+        return None
 
     def _complete_player_line(self, line, max_len):
         diff = max_len - len(line)
@@ -55,11 +53,10 @@ class Game:
         return line
 
     def __str__(self):
-        if self.evaluate() == 1:
-            return str(self.first_player) + " won."
-
-        if self.evaluate() == 2:
-            return str(self.second_player) + " won."
+        evaluate_result = self.evaluate()
+        
+        if evaluate_result:
+            return str(evaluate_result) + " won."
 
         max_len_player_name = max(
             len(str(self.first_player)),
