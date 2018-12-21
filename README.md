@@ -20,11 +20,12 @@ user@laptop:~$ ./run_tests.sh
 - [x] Create Score object
 - [x] Use faker module to generate fake first and last names
 - [x] Match evaluate function has to return Player who won or None
-- [ ] Define an entity as opponent on a match and player will inherit from this entity (to handle doubles tennis matches)
-- [ ] Use Factory design pattern to generate players
+- [x] Define an entity as opponent on a match and player will inherit from this entity (to handle doubles tennis matches)
+- [x] Use Factory design pattern to generate players
 - [x] Implement tests for Game object
 - [x] Implement tests for Score object
 - [x] Implement tests for Player object
 - [x] Run CI on commits
 - [x] Handle deuce situation
 - [x] Generate requirements.txt file
+- [ ] Add some comments and improve existing comments
