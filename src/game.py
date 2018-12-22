@@ -9,7 +9,7 @@ class Game:
 
     def __init__(self, first_player, second_player):
         """
-        Initialize a game
+        Initialize a game with two opponents and scores
         """
         self.first_player = first_player
         self.second_player = second_player
@@ -54,7 +54,7 @@ class Game:
 
     def __str__(self):
         evaluate_result = self.evaluate()
-        
+
         if evaluate_result:
             return str(evaluate_result) + " won."
 

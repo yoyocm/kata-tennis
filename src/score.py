@@ -1,7 +1,7 @@
 
 class Score:
     """
-    Score object will give value of player scores
+    Score class stores value and increment and decrement of this value
     """
 
     POSSIBLE_SCORES = ["love", "fifteen", "thirty", "forty", "advantage"]

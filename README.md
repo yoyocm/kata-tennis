@@ -13,7 +13,6 @@ user@laptop:~$ python main.py
 user@laptop:~$ ./run_tests.sh
 ```
 
-
 ### To-do list
 - [x] Create Game object
 - [x] Create Player object
@@ -28,4 +27,4 @@ user@laptop:~$ ./run_tests.sh
 - [x] Run CI on commits
 - [x] Handle deuce situation
 - [x] Generate requirements.txt file
-- [ ] Add some comments and improve existing comments
+- [x] Add some comments and improve existing comments

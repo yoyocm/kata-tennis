@@ -3,7 +3,9 @@ from src.abstract_opponent import AbstractOpponent
 
 class Doublet(AbstractOpponent):
     """
-    Doublet players and behaviour is implemented here
+    Doublet players and behaviour is implemented here.
+    Doublet inherits from AbstractOpponent
+    and has to implement __str__ function
     """
 
     def __init__(self, first_player, second_player):

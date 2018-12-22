@@ -1,4 +1,7 @@
 class AbstractOpponent:
+    """
+    AbstractOpponent class is used as primary class for Opponent classes
+    """
 
     def __str__(self):
         raise NotImplementedError(

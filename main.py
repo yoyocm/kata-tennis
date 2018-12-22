@@ -7,8 +7,10 @@ from faker import Faker
 fake = Faker()
 
 if __name__ == '__main__':
-    first_opponent = Opponent.factory('Doublet')
-    second_opponent = Opponent.factory('Doublet')
+    first_opponent = Opponent.factory('Player')
+    second_opponent = Opponent.factory('Player')
+    #first_opponent = Opponent.factory('Doublet')
+    #second_opponent = Opponent.factory('Doublet')
     game = Game(first_opponent, second_opponent)
     game_status = 0
 

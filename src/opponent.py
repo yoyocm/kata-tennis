@@ -4,6 +4,10 @@ from faker import Faker
 
 
 class Opponent:
+    """
+    Opponent class allows to create Player or Doublet
+    with the Factory design pattern
+    """
 
     def factory(type):
         fake = Faker()

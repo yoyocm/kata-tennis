@@ -35,7 +35,7 @@ class ScoreTest(unittest.TestCase):
         self.assertRaises(Exception, score.increment_score)
 
     def test_score_decrement(self):
-        """ test score score decrementation"""
+        """ test score decrementation"""
 
         score = Score()
 
