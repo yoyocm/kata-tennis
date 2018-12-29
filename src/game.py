@@ -17,29 +17,47 @@ class Game:
         self.second_player_score = Score()
 
     def first_player_win(self):
-        if self.second_player_score.score < 4:
-            self.first_player_score.increment_score()
-        else:
-            self.second_player_score.decrement_score()
+        if self.evaluate() is not None:
+            raise Exception('Game is over.')
+        self.first_player_score.increment_score()
 
     def second_player_win(self):
-        if self.first_player_score.score < 4:
-            self.second_player_score.increment_score()
-        else:
-            self.first_player_score.decrement_score()
+        if self.evaluate() is not None:
+            raise Exception('Game is over.')
+        self.second_player_score.increment_score()
+
+    def _is_deuce(self):
+        return self.first_player_score.score >= 3 and self.first_player_score == self.second_player_score
+
+    def _is_advantage(self):
+        return (self.first_player_score.score > 3 or self.second_player_score.score > 3) and self.first_player_score != self.second_player_score
+
+    def _is_over(self):
+        score_difference = self.first_player_score.score - self.second_player_score.score
+        return abs(score_difference) > 2 and (self.first_player_score.score > 3 or self.second_player_score.score > 3)
+
+    def _get_leading_player(self):
+        score_difference = self.first_player_score.score - self.second_player_score.score
+
+        if score_difference > 0:
+            return self.first_player
+        elif score_difference < 0:
+            return self.second_player
+
+        return None
 
     def evaluate(self):
         """
         Returns Player who won or None if the game is not completed
         """
+        score_difference = self.first_player_score.score - self.second_player_score.score
 
-        if self.first_player_score.score < 4 and self.second_player_score.score < 4:
+        if abs(score_difference) < 2 or (self.first_player_score.score < 4 and self.second_player_score.score < 4):
             return None
 
-        score_difference = self.first_player_score.score - self.second_player_score.score
-        if score_difference >= 2:
+        if score_difference > 0:
             return self.first_player
-        elif score_difference <= -2:
+        elif score_difference < 0:
             return self.second_player
 
         return None
@@ -53,19 +71,27 @@ class Game:
         return line
 
     def __str__(self):
-        evaluate_result = self.evaluate()
+        winner = self.evaluate()
 
-        if evaluate_result:
-            return str(evaluate_result) + " won."
+        if winner:
+            return str(winner) + " won."
 
         max_len_player_name = max(
             len(str(self.first_player)),
             len(str(self.second_player))
             )
 
-        if self.first_player_score == self.second_player_score and self.first_player_score.score >= 3:
+        if self._is_deuce():
             first_player_score = "deuce"
             second_player_score = "....."
+        elif self._is_advantage():
+            advantaged_player = self._get_leading_player()
+            if advantaged_player == self.first_player:
+                first_player_score = "Ad"
+                second_player_score = ""
+            else:
+                first_player_score = ""
+                second_player_score = "Ad"
         else:
             first_player_score = str(self.first_player_score)
             second_player_score = str(self.second_player_score)

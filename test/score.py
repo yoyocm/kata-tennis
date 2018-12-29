@@ -20,8 +20,8 @@ class ScoreTest(unittest.TestCase):
         score.increment_score()
         self.assertEqual(score.score, 1)
 
-    def test_score_max_increment(self):
-        """ test score score maximum incrementation"""
+    def test_score_multiple_increments(self):
+        """ test score multiple increments"""
 
         score = Score()
 
@@ -32,26 +32,8 @@ class ScoreTest(unittest.TestCase):
         score.increment_score()
         self.assertEqual(score.score, 5)
 
-        self.assertRaises(Exception, score.increment_score)
-
-    def test_score_decrement(self):
-        """ test score decrementation"""
-
-        score = Score()
-
-        self.assertRaises(Exception, score.decrement_score)
-
         score.increment_score()
-        score.increment_score()
-        score.increment_score()
-        self.assertEqual(score.score, 3)
-        self.assertRaises(Exception, score.decrement_score)
-
-        score.increment_score()
-        self.assertEqual(score.score, 4)
-
-        score.decrement_score()
-        self.assertTrue(score.score, 3)
+        self.assertEqual(score.score, 6)
 
 if __name__ == '__main__':
     unittest.main()
