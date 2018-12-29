@@ -120,8 +120,8 @@ class GameTest(unittest.TestCase):
         self.assertEqual(game.second_player_score.score, 3)
 
         game.second_player_win()
-        self.assertEqual(game.first_player_score.score, 3)
-        self.assertEqual(game.second_player_score.score, 3)
+        self.assertEqual(game.first_player_score.score, 4)
+        self.assertEqual(game.second_player_score.score, 4)
         self.assertEqual(game.evaluate(), None)
 
     def test_game_second_player_lose_advantage(self):
@@ -143,9 +143,56 @@ class GameTest(unittest.TestCase):
         self.assertEqual(game.second_player_score.score, 4)
 
         game.first_player_win()
-        self.assertEqual(game.first_player_score.score, 3)
-        self.assertEqual(game.second_player_score.score, 3)
+        self.assertEqual(game.first_player_score.score, 4)
+        self.assertEqual(game.second_player_score.score, 4)
         self.assertEqual(game.evaluate(), None)
+
+    def test_game_first_player_wins_with_more_4_points(self):
+        """ test game second player win after lose advantage"""
+        p1 = Player(self.fake.first_name(), self.fake.last_name())
+        p2 = Player(self.fake.first_name(), self.fake.last_name())
+        game = Game(p1, p2)
+
+        game.first_player_win()
+        game.first_player_win()
+        game.first_player_win()
+
+        game.second_player_win()
+        game.second_player_win()
+        game.second_player_win()
+        game.second_player_win()
+
+        game.first_player_win()
+        game.first_player_win()
+        game.first_player_win()
+
+        self.assertEqual(game.first_player_score.score, 6)
+        self.assertEqual(game.second_player_score.score, 4)
+        self.assertEqual(game.evaluate(), p1)
+
+    def test_game_second_player_wins_with_more_4_points(self):
+        """ test game second player win after lose advantage"""
+        p1 = Player(self.fake.first_name(), self.fake.last_name())
+        p2 = Player(self.fake.first_name(), self.fake.last_name())
+        game = Game(p1, p2)
+
+        game.first_player_win()
+        game.first_player_win()
+        game.first_player_win()
+
+        game.second_player_win()
+        game.second_player_win()
+        game.second_player_win()
+        game.second_player_win()
+
+        game.first_player_win()
+
+        game.second_player_win()
+        game.second_player_win()
+
+        self.assertEqual(game.first_player_score.score, 4)
+        self.assertEqual(game.second_player_score.score, 6)
+        self.assertEqual(game.evaluate(), p2)
 
 
 if __name__ == '__main__':
