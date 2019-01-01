@@ -32,10 +32,6 @@ class Game:
     def _is_advantage(self):
         return (self.first_player_score.score > 3 or self.second_player_score.score > 3) and self.first_player_score != self.second_player_score
 
-    def _is_over(self):
-        score_difference = self.first_player_score.score - self.second_player_score.score
-        return abs(score_difference) > 2 and (self.first_player_score.score > 3 or self.second_player_score.score > 3)
-
     def _get_leading_player(self):
         score_difference = self.first_player_score.score - self.second_player_score.score
 
