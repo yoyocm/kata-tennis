@@ -2,9 +2,6 @@ from src.game import Game
 from src.opponent import Opponent
 
 from random import randint
-from faker import Faker
-
-fake = Faker()
 
 if __name__ == '__main__':
     first_opponent = Opponent.factory('Player')

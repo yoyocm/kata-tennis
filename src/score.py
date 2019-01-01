@@ -3,7 +3,7 @@ class Score:
     """
     Score class stores value and increment and decrement of this value
     """
-    # TODO rethink score displaying
+
     POSSIBLE_SCORES = ["love", "fifteen", "thirty", "forty"]
 
     def __init__(self, score=0):
